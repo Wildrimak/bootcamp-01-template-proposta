@@ -28,5 +28,6 @@ O desenvolvimento das funcionalidades devem seguir uma ordem, que deve ser:
 ##### [Todos os requisitos](https://github.com/claudiooliveirazup/documentacao-cartao-branco/tree/master/proposta)
 
 ### Estado atual do projeto
- - &#9745; [Setup do projeto](000.setup_projeto.md)
- - &#9744; [Setup do docker compose](001.setup_docker_compose.md)
+ - &#9745; [Setup do projeto](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/000.setup_projeto.md)
+ - &#9745; [Setup do docker compose](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/001.setup_docker_compose.md)
+ - &#9744; [Criação da proposta](005.criacao_proposta.md)
