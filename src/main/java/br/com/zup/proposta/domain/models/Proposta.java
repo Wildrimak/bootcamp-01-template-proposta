@@ -40,7 +40,7 @@ public class Proposta {
 
 	public Proposta(@NotEmpty String documento, @Email @NotEmpty String email, @NotEmpty String nome,
 			@NotEmpty String endereco, @NotNull @Positive BigDecimal salario) {
-		this.documento = documento;
+		this.documento = somenteNumeroDocumento(documento);
 		this.email = email;
 		this.nome = nome;
 		this.endereco = endereco;
@@ -50,5 +50,14 @@ public class Proposta {
 	public Long getId() {
 		return id;
 	}
+
+	public String getDocumento() {
+		return documento;
+	}
+	
+	private String somenteNumeroDocumento(String documento) {
+		return documento.replaceAll("[^0-9]", "");
+	}
+
 
 }
