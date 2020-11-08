@@ -35,6 +35,8 @@ public class Proposta {
 	@Positive
 	private BigDecimal salario;
 
+	private StatusProposta statusProposta;
+
 	Proposta() {
 	}
 
@@ -54,10 +56,17 @@ public class Proposta {
 	public String getDocumento() {
 		return documento;
 	}
-	
+
+	public StatusProposta getStatusProposta() {
+		return statusProposta;
+	}
+
+	public void setStatusProposta(StatusProposta statusProposta) {
+		this.statusProposta = statusProposta;
+	}
+
 	private String somenteNumeroDocumento(String documento) {
 		return documento.replaceAll("[^0-9]", "");
 	}
-
 
 }

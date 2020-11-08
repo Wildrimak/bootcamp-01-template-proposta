@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import br.com.zup.proposta.api.dtos.responses.ErroResponse;
 
 @RestControllerAdvice
-public class ApiControllerAdvice {
+public class PropostaControllerAdvice {
 
 	@Autowired
 	private MessageSource messageSource;

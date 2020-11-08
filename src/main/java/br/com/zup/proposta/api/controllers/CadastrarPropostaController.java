@@ -15,17 +15,17 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.zup.proposta.api.dtos.requests.PropostaRequest;
 import br.com.zup.proposta.api.validators.CpfCnpjValidator;
 import br.com.zup.proposta.domain.models.Proposta;
-import br.com.zup.proposta.domain.services.PropostaService;
+import br.com.zup.proposta.domain.services.CadastrarPropostaService;
 
 @RestController
 @RequestMapping("/propostas")
-public class PropostaController {
+public class CadastrarPropostaController {
 
 	@Autowired
 	private CpfCnpjValidator cpfCnpjValidator; // 1
 
 	@Autowired
-	private PropostaService propostaService; // 1
+	private CadastrarPropostaService cadastrarPropostaService; // 1
 
 	@InitBinder
 	public void init(WebDataBinder binder) {
@@ -36,11 +36,12 @@ public class PropostaController {
 	public ResponseEntity<?> criarProposta(@Valid @RequestBody PropostaRequest request,
 			UriComponentsBuilder uriComponentsBuilder) {
 
-		Proposta proposta = request.toProposta(); // 4
-		Proposta salva = propostaService.criar(proposta);
-
+		Proposta proposta = request.toProposta(); // 1
+		Proposta salva = cadastrarPropostaService.salvarPropostaRecebidaSemAnalise(proposta);
+		Proposta avaliada = cadastrarPropostaService.avaliarElegibilidade(salva);
+		
 		return ResponseEntity
-				.created(uriComponentsBuilder.path("/propostas/{id}").buildAndExpand(salva.getId()).toUri())
+				.created(uriComponentsBuilder.path("/propostas/{id}").buildAndExpand(avaliada.getId()).toUri())
 				.body(salva);
 
 	}
