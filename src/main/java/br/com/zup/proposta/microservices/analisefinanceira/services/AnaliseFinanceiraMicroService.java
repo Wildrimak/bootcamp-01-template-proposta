@@ -1,4 +1,4 @@
-package br.com.zup.proposta.microservices.avaliacaofinanceira.services;
+package br.com.zup.proposta.microservices.analisefinanceira.services;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.zup.proposta.domain.models.Proposta;
 import br.com.zup.proposta.domain.models.StatusProposta;
-import br.com.zup.proposta.microservices.avaliacaofinanceira.dtos.requests.DocumentoParaAnaliseFinanceiraRequest;
-import br.com.zup.proposta.microservices.avaliacaofinanceira.endpoints.AnaliseFinanceiraEndpoint;
+import br.com.zup.proposta.microservices.analisefinanceira.dtos.requests.DocumentoParaAnaliseFinanceiraRequest;
+import br.com.zup.proposta.microservices.analisefinanceira.endpoints.AnaliseFinanceiraEndpoint;
 import feign.FeignException.UnprocessableEntity;
 
 @Service

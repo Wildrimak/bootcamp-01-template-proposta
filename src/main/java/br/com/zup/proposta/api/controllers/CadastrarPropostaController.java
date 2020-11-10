@@ -39,10 +39,11 @@ public class CadastrarPropostaController {
 		Proposta proposta = request.toProposta(); // 1
 		Proposta salva = cadastrarPropostaService.salvarPropostaRecebidaSemAnalise(proposta);
 		Proposta avaliada = cadastrarPropostaService.avaliarElegibilidade(salva);
+		Proposta atualizada = cadastrarPropostaService.atualizarPropostaComAnalise(avaliada);
 		
-		return ResponseEntity
-				.created(uriComponentsBuilder.path("/propostas/{id}").buildAndExpand(avaliada.getId()).toUri())
-				.body(salva);
+				return ResponseEntity
+				.created(uriComponentsBuilder.path("/propostas/{id}").buildAndExpand(atualizada.getId()).toUri())
+				.body(atualizada);
 
 	}
 

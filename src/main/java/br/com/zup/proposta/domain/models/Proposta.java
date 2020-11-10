@@ -3,6 +3,8 @@ package br.com.zup.proposta.domain.models;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,6 +37,7 @@ public class Proposta {
 	@Positive
 	private BigDecimal salario;
 
+	@Enumerated(EnumType.STRING)
 	private StatusProposta statusProposta;
 
 	Proposta() {
@@ -59,6 +62,10 @@ public class Proposta {
 
 	public StatusProposta getStatusProposta() {
 		return statusProposta;
+	}
+
+	public String getNome() {
+		return nome;
 	}
 
 	public void setStatusProposta(StatusProposta statusProposta) {

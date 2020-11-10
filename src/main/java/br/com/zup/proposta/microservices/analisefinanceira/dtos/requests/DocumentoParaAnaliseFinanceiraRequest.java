@@ -1,4 +1,4 @@
-package br.com.zup.proposta.microservices.avaliacaofinanceira.dtos.requests;
+package br.com.zup.proposta.microservices.analisefinanceira.dtos.requests;
 
 import javax.validation.constraints.NotEmpty;
 

@@ -34,4 +34,5 @@ O desenvolvimento das funcionalidades devem seguir uma ordem, que deve ser:
   - &#9745; [Não pode proposta duplicada](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/010.nao_pode_haver_proposta.md)
   - &#9745; [Consultando dados do solicitante](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/015.consultando_dados_solicitante.md)  
   - &#9745; [Melhorando a visibilidade para a equipe de operação](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/020.melhorando_visibilidade_healthcheck.md) 
-  - &#9744; [Criação do cartão](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/025.criacao_cartao.md)  
+  - &#9745; [Criação do cartão](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/025.criacao_cartao.md)  
+  - &#9744; [Associar cartão a proposta](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/030.associar_cartao_proposta.md)
