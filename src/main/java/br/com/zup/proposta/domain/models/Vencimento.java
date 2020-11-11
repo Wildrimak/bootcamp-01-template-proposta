@@ -1,14 +1,26 @@
-package br.com.zup.proposta.microservices.contas.dtos.responses;
+package br.com.zup.proposta.domain.models;
 
 import java.time.LocalDateTime;
 
-public class VencimentoResponse {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
+public class Vencimento {
+
+	@Id
 	private String id;
 	private Integer dia;
 	private LocalDateTime dataDeCriacao;
 
-	public VencimentoResponse(String id, Integer dia, LocalDateTime dataDeCriacao) {
+	@OneToOne(mappedBy = "vencimento")
+	private Cartao cartao;
+
+	Vencimento() {
+	}
+
+	public Vencimento(String id, Integer dia, LocalDateTime dataDeCriacao) {
 		this.id = id;
 		this.dia = dia;
 		this.dataDeCriacao = dataDeCriacao;

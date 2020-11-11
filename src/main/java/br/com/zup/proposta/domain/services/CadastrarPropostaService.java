@@ -27,9 +27,6 @@ public class CadastrarPropostaService {
 	@Autowired
 	private AnaliseFinanceiraMicroService analiseFinanceiraMicroService; // 1
 
-	@Autowired
-	private SolicitarCartaoEmSegundoPlanoService solicitarCartaoEmSegundoPlanoService; // 1
-
 	@Transactional
 	public Proposta salvarPropostaRecebidaSemAnalise(Proposta proposta) { // 1
 
@@ -46,24 +43,13 @@ public class CadastrarPropostaService {
 	public Proposta avaliarElegibilidade(@NotNull @Valid Proposta proposta) {
 
 		logger.info("Avaliando Elegibilidade da proposta recebida");
-		logger.info("Dados da proposta:\n\tid = {}", proposta.getId());
 
 		// 1
 		StatusProposta statusProposta = analiseFinanceiraMicroService.avaliaElegibilidade(proposta);
 		proposta.setStatusProposta(statusProposta);
 
 		logger.info("Proposta agora tem um status");
-		logger.info("Dados da proposta:\n\tid = {}\n\tstatus", proposta.getId(), proposta.getStatusProposta());
-
-		// 1
-		if (statusProposta.equals(StatusProposta.ELEGIVEL)) {
-
-			logger.info("Proposta agora está sendo enviada para ser processada em segundo plano");
-			logger.info("Estado do objeto proposta: {} ", proposta);
-
-			solicitarCartaoEmSegundoPlanoService.executar(proposta);
-
-		}
+		logger.info("Status: {}", proposta.getStatusProposta());
 
 		return proposta;
 	}

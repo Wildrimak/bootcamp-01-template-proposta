@@ -1,15 +1,27 @@
-package br.com.zup.proposta.microservices.contas.dtos.responses;
+package br.com.zup.proposta.domain.models;
 
 import java.time.LocalDateTime;
 
-public class CarteiraResponse {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Carteira {
+
+	@Id
 	private String id;
 	private String email;
 	private LocalDateTime associadaEm;
 	private String emissor;
 
-	public CarteiraResponse(String id, String email, LocalDateTime associadaEm, String emissor) {
+	@ManyToOne
+	private Cartao cartao;
+
+	Carteira() {
+	}
+
+	public Carteira(String id, String email, LocalDateTime associadaEm, String emissor) {
 		this.id = id;
 		this.email = email;
 		this.associadaEm = associadaEm;

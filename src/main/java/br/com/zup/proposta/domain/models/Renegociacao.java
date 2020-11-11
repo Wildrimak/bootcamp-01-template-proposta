@@ -1,16 +1,28 @@
-package br.com.zup.proposta.microservices.contas.dtos.responses;
+package br.com.zup.proposta.domain.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class RenegociacaoResponse {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
+public class Renegociacao {
+
+	@Id
 	private String id;
 	private Integer quantidade;
 	private BigDecimal valor;
 	private LocalDateTime dataDeCriacao;
 
-	public RenegociacaoResponse(String id, Integer quantidade, BigDecimal valor, LocalDateTime dataDeCriacao) {
+	@OneToOne(mappedBy = "renegociacao")
+	private Cartao cartao;
+
+	Renegociacao() {
+	}
+
+	public Renegociacao(String id, Integer quantidade, BigDecimal valor, LocalDateTime dataDeCriacao) {
 		this.id = id;
 		this.quantidade = quantidade;
 		this.valor = valor;
