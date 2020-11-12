@@ -10,6 +10,6 @@ import br.com.zup.proposta.domain.models.Cartao;
 public interface ObterCartaoEndpoint {
 
 	@GetMapping("/api/cartoes")
-	public Cartao getCartao(@RequestParam("idProposta") Long idProposta);
+	public Cartao getCartao(@RequestParam("idProposta") String idProposta);
 	
 }

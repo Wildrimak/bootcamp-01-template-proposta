@@ -20,7 +20,7 @@ public class AcompanharPropostaController {
 	private PropostaRepository propostaRepository; // 1
 
 	@GetMapping("/{id}")
-	public ResponseEntity<?> detalheCompra(@PathVariable Long id) {
+	public ResponseEntity<?> detalheCompra(@PathVariable String id) {
 
 		Optional<Proposta> optionalProposta = propostaRepository.findById(id);
 

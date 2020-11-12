@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.zup.proposta.domain.models.Proposta;
 import br.com.zup.proposta.domain.models.StatusProposta;
 
-public interface PropostaRepository extends JpaRepository<Proposta, Long> {
+public interface PropostaRepository extends JpaRepository<Proposta, String> {
 
 	public Optional<Proposta> findByDocumento(String documento);
 

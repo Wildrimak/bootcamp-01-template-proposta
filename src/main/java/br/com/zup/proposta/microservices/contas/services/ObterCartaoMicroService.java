@@ -20,7 +20,7 @@ public class ObterCartaoMicroService {
 	@Autowired
 	private ObterCartaoEndpoint obterCartaoEndpoint; // 1
 
-	public Optional<Cartao> obterCartao(@NotNull Long idProposta) { // 1
+	public Optional<Cartao> obterCartao(@NotNull String idProposta) { // 1
 
 		logger.info("Chegando no ObterCartaoMicroService e executando o metodo de obterCartao");
 
