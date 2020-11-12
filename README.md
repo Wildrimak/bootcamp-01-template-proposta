@@ -37,4 +37,5 @@ O desenvolvimento das funcionalidades devem seguir uma ordem, que deve ser:
   - &#9745; [Criação do cartão](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/025.criacao_cartao.md)  
   - &#9745; [Associar cartão a proposta](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/030.associar_cartao_proposta.md)
   - &#9745; [Acompanhamento da proposta](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/035.acompanhamento_proposta.md)
-  - &#9744; [Rodar aplicação no docker](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/040.rodar_nossa_aplicacao.md)
+  - &#9745; [Rodar aplicação no docker](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/040.rodar_nossa_aplicacao.md)
+  - &#9744; [Cadastro biometria](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/045.criar_biometria.md)
