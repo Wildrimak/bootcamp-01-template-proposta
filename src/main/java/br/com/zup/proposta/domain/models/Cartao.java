@@ -7,19 +7,14 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Cartao {
 
 	@Id
-	@GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	private String id;
 
 	private LocalDateTime emitidoEm;
@@ -44,6 +39,9 @@ public class Cartao {
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Vencimento vencimento;
+	
+	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
+	private List<Biometria> biometrias;
 
 	private String idProposta;
 
