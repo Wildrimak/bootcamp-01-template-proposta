@@ -2,6 +2,7 @@ package br.com.zup.proposta.domain.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Cartao {
@@ -39,18 +41,23 @@ public class Cartao {
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Vencimento vencimento;
-	
+
 	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
 	private List<Biometria> biometrias;
 
 	private String idProposta;
 
 	Cartao() {
+		this.bloqueios = new ArrayList<>();
+		this.avisos = new ArrayList<>();
+		this.carteiras = new ArrayList<>();
+		this.parcelas = new ArrayList<>();
+		this.biometrias = new ArrayList<>();
 	}
 
-	public Cartao(String id, LocalDateTime emitidoEm, String titular, List<Bloqueio> bloqueios, List<Aviso> avisos,
-			List<Carteira> carteiras, List<Parcela> parcelas, BigDecimal limite, Renegociacao renegociacao,
-			Vencimento vencimento, String idProposta) {
+	public Cartao(String id, LocalDateTime emitidoEm, String titular, @NotNull List<Bloqueio> bloqueios,
+			List<Aviso> avisos, List<Carteira> carteiras, List<Parcela> parcelas, BigDecimal limite,
+			Renegociacao renegociacao, Vencimento vencimento, String idProposta) {
 
 		this.id = id;
 		this.emitidoEm = emitidoEm;
@@ -107,6 +114,10 @@ public class Cartao {
 
 	public String getIdProposta() {
 		return idProposta;
+	}
+
+	public Integer quantidadeDeBloqueios() {
+		return bloqueios.size();
 	}
 
 }
