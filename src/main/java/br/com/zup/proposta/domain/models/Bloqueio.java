@@ -30,6 +30,7 @@ public class Bloqueio {
 
 	public Bloqueio(String enderecoIp, String userAgent, Cartao cartao) {
 		this.bloqueadoEm = LocalDateTime.now();
+		this.sistemaResponsavel = "API-PROPOSTAS";
 		this.ativo = true;
 		this.enderecoIp = enderecoIp;
 		this.userAgent = userAgent;
