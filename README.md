@@ -39,7 +39,7 @@ O desenvolvimento das funcionalidades devem seguir uma ordem, que deve ser:
   - &#9745; [Acompanhamento da proposta](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/035.acompanhamento_proposta.md)
   - &#9745; [Rodar aplicação no docker](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/040.rodar_nossa_aplicacao.md)
   - &#9745; [Cadastro biometria](https://github.com/claudiooliveirazup/documentacao-cartao-branco/blob/master/proposta/045.criar_biometria.md)
-  - &#9744; [Login com keycloack](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/050.login_via_senha.md)
+  - &#9745; [Login com keycloack](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/050.login_via_senha.md)
   - &#9745; [Realizar bloqueio do cartão](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/055.bloqueio_cartao.md)
   - &#9745; [Bloqueio do cartão deve acontecer no legado](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/060.notificando_legado_cartao.md)
   - &#9744; [Enviar metricas de cada instancia executada ao Prometheus](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/065.como_saber_tudo_funcionando_corretamente.md)
