@@ -42,7 +42,7 @@ O desenvolvimento das funcionalidades devem seguir uma ordem, que deve ser:
   - &#9745; [Login com keycloack](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/050.login_via_senha.md)
   - &#9745; [Realizar bloqueio do cartão](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/055.bloqueio_cartao.md)
   - &#9745; [Bloqueio do cartão deve acontecer no legado](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/060.notificando_legado_cartao.md)
-  - &#9744; [Enviar metricas de cada instancia executada ao Prometheus](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/065.como_saber_tudo_funcionando_corretamente.md)
+  - &#9745; [Enviar metricas de cada instancia executada ao Prometheus](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/065.como_saber_tudo_funcionando_corretamente.md)
   - &#9744; [Cadastrar solicitação de recuperação de senha](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/070.recuperacao_senha.md)
   - &#9744; [Cadastrar aviso de viagem](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/075.aviso_viagem.md)
   - &#9744; [Aviso de viagem deve acontecer no legado](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/080.notificando_sistema_bancario_viagem.md)

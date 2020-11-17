@@ -13,6 +13,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests(authorizeRequests -> 
 			authorizeRequests
+				.antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
 				.antMatchers(HttpMethod.GET, "/propostas/**").hasAuthority("SCOPE_propostas:read")
 				.antMatchers(HttpMethod.GET, "/cartoes/**").hasAuthority("SCOPE_cartoes:read")
 				.antMatchers(HttpMethod.POST, "/cartoes/**").hasAuthority("SCOPE_cartoes:write")
