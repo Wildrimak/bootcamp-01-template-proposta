@@ -23,27 +23,27 @@ public class Cartao {
 	private String titular;
 
 	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
-	private List<Bloqueio> bloqueios;
+	private List<Bloqueio> bloqueios; //1
 
 	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
-	private List<Aviso> avisos;
+	private List<Aviso> avisos; //1
 
 	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
-	private List<Carteira> carteiras;
+	private List<Carteira> carteiras; //1
 
 	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
-	private List<Parcela> parcelas;
+	private List<Parcela> parcelas; //1
 
 	private BigDecimal limite;
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Renegociacao renegociacao;
+	private Renegociacao renegociacao; //1
 
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Vencimento vencimento;
+	private Vencimento vencimento; //1
 
 	@OneToMany(mappedBy = "cartao", cascade = CascadeType.ALL)
-	private List<Biometria> biometrias;
+	private List<Biometria> biometrias; //1
 
 	private String idProposta;
 

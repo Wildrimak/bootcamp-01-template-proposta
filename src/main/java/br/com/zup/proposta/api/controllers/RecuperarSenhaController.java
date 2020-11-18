@@ -13,24 +13,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.zup.proposta.api.dtos.responses.BloqueioResponse;
-import br.com.zup.proposta.domain.models.Bloqueio;
+import br.com.zup.proposta.api.dtos.responses.RecuperarSenhaResponse;
 import br.com.zup.proposta.domain.models.Cartao;
+import br.com.zup.proposta.domain.models.RecuperarSenhaCartao;
 import br.com.zup.proposta.domain.repositories.CartaoRepository;
-import br.com.zup.proposta.domain.services.BloquearCartaoService;
+import br.com.zup.proposta.domain.services.RecuperarSenhaCartaoService;
 
 @RestController
-@RequestMapping("/cartoes/{id}/bloqueios")
-public class BloquearCartaoController {
+@RequestMapping("/cartoes/{id}/recuperarSenha")
+public class RecuperarSenhaController {
 
 	@Autowired
 	private CartaoRepository cartaoRepository;
 
 	@Autowired
-	private BloquearCartaoService bloquearCartaoService;
+	private RecuperarSenhaCartaoService recuperarSenhaCartaoService;
 
 	@PostMapping
-	public ResponseEntity<?> bloqueie(HttpServletRequest httpServletRequest, @PathVariable String id,
+	public ResponseEntity<?> recuperarSenha(HttpServletRequest httpServletRequest, @PathVariable String id,
 			@RequestHeader(value = "User-Agent") String userAgent, UriComponentsBuilder uriComponentsBuilder) {
 
 		Optional<Cartao> optional = cartaoRepository.findById(id);
@@ -42,14 +42,13 @@ public class BloquearCartaoController {
 		Cartao cartao = optional.get();
 
 		String remoteAddr = httpServletRequest.getRemoteAddr();
-		Bloqueio bloqueio = new Bloqueio(remoteAddr, userAgent, cartao);
 
-		Bloqueio bloqueado = bloquearCartaoService.registrar(bloqueio);
+		RecuperarSenhaCartao recuperarSenhaCartao = new RecuperarSenhaCartao(cartao, remoteAddr, userAgent);
 
-		return ResponseEntity
-				.created(uriComponentsBuilder.path("/cartoes/{idCartao}/bloqueios/{id}").buildAndExpand(cartao.getId(), bloqueado.getId()).toUri())
-				.body(new BloqueioResponse(bloqueado));
+		RecuperarSenhaCartao save = recuperarSenhaCartaoService.save(recuperarSenhaCartao);
+
+		return ResponseEntity.created(uriComponentsBuilder.path("/cartoes/{idCartao}/recuperarSenha/{idRecuperarSenha}")
+				.buildAndExpand(cartao.getId(), save.getId()).toUri()).body(new RecuperarSenhaResponse(save));
 
 	}
-
 }

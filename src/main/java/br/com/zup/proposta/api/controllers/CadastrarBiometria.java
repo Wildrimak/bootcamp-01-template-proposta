@@ -48,7 +48,7 @@ public class CadastrarBiometria {
 		Biometria salva = cadastrarBiometriaService.salvar(biometria);
 
 		return ResponseEntity
-				.created(uriComponentsBuilder.path("/biometrias/{id}").buildAndExpand(salva.getId()).toUri())
+				.created(uriComponentsBuilder.path("/cartoes/{idCartao}/biometrias/{id}").buildAndExpand(cartao.getId(), salva.getId()).toUri())
 				.body(new BiometriaResponse(salva));
 	}
 
