@@ -44,7 +44,7 @@ O desenvolvimento das funcionalidades devem seguir uma ordem, que deve ser:
   - &#9745; [Bloqueio do cartão deve acontecer no legado](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/060.notificando_legado_cartao.md)
   - &#9745; [Enviar metricas de cada instancia executada ao Prometheus](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/065.como_saber_tudo_funcionando_corretamente.md)
   - &#9745; [Cadastrar solicitação de recuperação de senha](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/070.recuperacao_senha.md)
-  - &#9744; [Cadastrar aviso de viagem](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/075.aviso_viagem.md)
+  - &#9745; [Cadastrar aviso de viagem](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/075.aviso_viagem.md)
   - &#9744; [Aviso de viagem deve acontecer no legado](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/080.notificando_sistema_bancario_viagem.md)
   - &#9744; [Cadastrar associação com o paypal](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/085.associacao_paypal.md)
   - &#9744; [Cadastrar associação com o samsung pay](https://github.com/zup-academy/documentacao-cartao-branco/blob/master/proposta/090.associacao_samsung_pay.md)
